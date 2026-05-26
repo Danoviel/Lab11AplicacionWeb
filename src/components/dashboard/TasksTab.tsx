@@ -28,11 +28,17 @@ export function TasksTab() {
   const [currentPage, setCurrentPage] = useState(1);
   const [deadline, setDeadline] = useState<Date | undefined>(undefined);
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    description: string;
+    projectId: string;
+    status: Task["status"];
+    priority: Task["priority"];
+    userId: string;
+  }>({
     description: "",
     projectId: "",
-    status: "pending" as const,
-    priority: "medium" as const,
+    status: "pending",
+    priority: "medium",
     userId: "",
   });
 
